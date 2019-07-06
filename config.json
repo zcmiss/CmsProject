@@ -1,7 +1,21 @@
 {
-  "name": "CmsProject",
-  "version": "1.0.0",
-  "dependencies": {
-    
-  }
+  "app_name": "CmsProject",
+  "port": "8800",
+  "static_path": "/manage/static",
+  "data_base": {
+    "drive": "mysql",
+    "host": "127.0.0.1",
+    "port": "3306",
+    "user": "root",
+    "pwd": "root",
+    "database": "qfCms"
+  },
+  "redis": {
+    "net_work": "tcp",
+    "addr": "127.0.0.1",
+    "port": "6379",
+    "passwword": "",
+    "prefix": "qfCms_"
+  },
+  "mode": "dev"
 }
