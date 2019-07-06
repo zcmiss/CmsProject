@@ -75,7 +75,6 @@ func mvcHandle(app *iris.Application) {
 		Cookie:  "sessioncookie",
 		Expires: 24 * time.Hour,
 	})
-
 	//获取redis实例
 	redis := datasource.NewRedis()
 	//设置session的同步位置为redis

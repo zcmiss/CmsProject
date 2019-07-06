@@ -1,6 +1,8 @@
 package router
 
 import (
+	"fmt"
+
 	"github.com/kataras/iris"
 )
 
@@ -12,5 +14,5 @@ const (
 )
 
 func RouteAdmin(app *iris.Application) {
-
+	fmt.Println("这是router  . . . ")
 }

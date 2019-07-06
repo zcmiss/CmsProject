@@ -2,11 +2,10 @@ package utils
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"reflect"
 	"time"
-
-	"log"
 
 	"github.com/kataras/iris"
 )
@@ -30,7 +29,6 @@ func setField(obj interface{}, name string, value interface{}) error {
 		log.Println("No such field ", name)
 		return fmt.Errorf("No such field %s ", name)
 	}
-
 	//结构体中变量的类型
 	fieldType := fieldValue.Type
 	//参数的值
@@ -43,25 +41,19 @@ func setField(obj interface{}, name string, value interface{}) error {
 	if valTypeStr == "float64" && fieldTypeStr == "int" {
 		val = val.Convert(fieldType)
 	}
-
 	//类型必须匹配
 	if fieldType != val.Type() {
 		return fmt.Errorf("value type %s didn't match obj field type %s ", valTypeStr, fieldTypeStr)
 	}
-
 	//fieldValue.Set(val)
-
 	return nil
 }
-
 func LogInfo(app *iris.Application, v ...interface{}) {
 	app.Logger().Info(v)
 }
-
 func LogError(app *iris.Application, v ...interface{}) {
 	app.Logger().Error(v)
 }
-
 func LogDebug(app *iris.Application, v ...interface{}) {
 	app.Logger().Debug(v)
 }
